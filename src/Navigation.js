@@ -2,10 +2,12 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import Splash from './Splash';
 import Login from './Components/Login/Login';
+import HomePage from './Components/Home/HomePage';
 
 const IntroStack = StackNavigator({ 
     splash:     { screen: Splash },
-    login:     { screen: Login }
+    login:      { screen: Login },
+    home:       { screen: HomePage },
 
      }, 
     { headerMode: 'none' })

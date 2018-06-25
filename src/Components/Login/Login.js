@@ -28,7 +28,7 @@ class Login extends Component {
                     // value={this.state.password}    
                     // onChangeText={password => this.setState({ password })}
                 />
-                <Button>
+                <Button onPress={() => this.props.navigation.navigate('home')}>
                     LOGIN
                 </Button>
             </View>
