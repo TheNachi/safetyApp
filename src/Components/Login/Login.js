@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Image, Text } from 'react-native';
 import Input from '../Common/Input';
-import Button from '../Common/Button';
+import Button from '../Common/Button1';
 
 class Login extends Component {
 
@@ -28,7 +28,7 @@ class Login extends Component {
                     // value={this.state.password}    
                     // onChangeText={password => this.setState({ password })}
                 />
-                <Button onPress={() => this.props.navigation.navigate('home')}>
+                <Button onPress={() => this.props.navigation.navigate('homeStack')}>
                     LOGIN
                 </Button>
             </View>

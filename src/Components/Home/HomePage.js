@@ -2,40 +2,62 @@ import React, { Component } from 'react';
 import { Container, Body, Right, Button, Icon, Title, Tab, Tabs, ScrollableTab,
   Content, Footer, FooterTab
 } from 'native-base';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import Header from '../Common/Header';
+import Button1 from '../Common/Button1';
 
 class HomePage extends Component {
 
   render() {
     return (
-        <Container>
+        <View>
           <Header />
-          <Content>
             <Text>HOME PAGE</Text>
-          </Content>
-          <Footer>
-            <FooterTab>
-              <Button active>
-                <Icon type='MaterialIcons' name='home' />
-              </Button>
-              <Button>
-                <Icon type='MaterialIcons' name='notifications-none' />
-              </Button>
-              <Button>
-                <Icon type='FontAwesome' name='plus-square' />
-              </Button>
-              <Button>
-                <Icon type='FontAwesome' name='heart-o' />
-              </Button>
-              <Button>
-                <Icon type='MaterialIcons' name='perm-identity' />
-              </Button>
-            </FooterTab>
-          </Footer>
-        </Container>
+            <View style={{ height: '100%', flexDirection: 'column', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, }}>
+              <View style={{ flexDirection: 'row', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, flex: 1, alignItems: 'center', justifyContent: 'center'  }}>
+                <TouchableOpacity
+                  style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: 2, margin: 7, marginTop: -90 }}
+                  onPress={() => this.props.navigation.navigate('hseSymbols')}
+                >
+                  <Image 
+                    style={{ height: 130, width: 130, }}
+                    source={require('../../Assets/boss.png')} 
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: 2, margin: 7, marginTop: -90 }}
+                  onPress={() => this.props.navigation.navigate('safetyRules')}
+                >
+                  <Image 
+                    style={{ height: 130, width: 130, }}
+                    source={require('../../Assets/paper.png')} 
+                  />
+                </TouchableOpacity>
+              </View>
+            </View>
+        </View>
     );  
   }
 }
+
+styles = {
+  buttonViewStyle: {
+    flexDirection: 'row',
+    width: 400,
+    height: 200,
+    justifyContent: 'center',
+    // alignItems: 'center'
+  },
+  viewButtonStyle: {
+    // flex: 1,
+    // width: '30%'
+  },
+  parentViewStyle: {
+    justifyContent: 'center',
+    // width: '100%',
+    // alignItems: 'center',
+  }
+}
+
 
 export default HomePage;
