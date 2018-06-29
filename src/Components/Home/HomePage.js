@@ -5,6 +5,7 @@ import { Container, Body, Right, Button, Icon, Title, Tab, Tabs, ScrollableTab,
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import Header from '../Common/Header';
 import Button1 from '../Common/Button1';
+import SafetyFirst from '../Common/SafetyFirst';
 
 class HomePage extends Component {
 
@@ -12,7 +13,7 @@ class HomePage extends Component {
     return (
         <View>
           <Header />
-            <Text>HOME PAGE</Text>
+          <SafetyFirst />
             <View style={{ height: '100%', flexDirection: 'column', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, }}>
               <View style={{ flexDirection: 'row', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, flex: 1, alignItems: 'center', justifyContent: 'center'  }}>
                 <TouchableOpacity

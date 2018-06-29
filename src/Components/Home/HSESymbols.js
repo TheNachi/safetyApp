@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import Header from '../Common/Header';
+import SafetyFirst from '../Common/SafetyFirst';
 
 class HSESymbols extends Component {
 
@@ -8,7 +9,20 @@ class HSESymbols extends Component {
     return (
         <View>
             <Header />
-            <Text>HSESymbols</Text>
+            <SafetyFirst />
+            <ScrollView>
+              <View>
+                <Text>
+                  HSE Symbols
+                </Text>
+              </View>
+              <View>
+                <Text>
+                  Quickly find information about the symbol that you see.
+                </Text>
+                
+              </View>
+            </ScrollView>
         </View>
     );  
   }

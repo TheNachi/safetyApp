@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Header from '../Common/Header';
+import SafetyFirst from '../Common/SafetyFirst';
 
 class ProfilePage extends Component {
 
@@ -8,6 +9,7 @@ class ProfilePage extends Component {
     return (
         <View>
             <Header />
+            <SafetyFirst />
             <Text>PROFILE PAGE</Text>
         </View>
     );  
