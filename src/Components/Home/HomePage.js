@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Container, Body, Right, Button, Icon, Title, Tab, Tabs, ScrollableTab,
-  Content, Footer, FooterTab
-} from 'native-base';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import Header from '../Common/Header';
 import Button1 from '../Common/Button1';

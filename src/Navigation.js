@@ -16,9 +16,9 @@ const homeStack = StackNavigator({
     hseSymbols: { screen: HSESymbols },
     safetyRules: { screen: SafetyRules },
   
-  } 
-//   {
-//     headerMode: 'float',
+  }, 
+  {
+    headerMode: 'none',
 //     navigationOptions: {
 //       headerStyle: { backgroundColor: '#EF8E1F' },
 //       title: 'TRIBES!',
@@ -30,7 +30,7 @@ const homeStack = StackNavigator({
 //         fontWeight: 'bold'
 //       }
 //     }
-//   }
+  }
 );
 
 const tabStack = createBottomTabNavigator({
