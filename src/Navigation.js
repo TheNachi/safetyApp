@@ -10,6 +10,7 @@ import ActivityPage from './Components/Activity/ActivityPage';
 import ProfilePage from './Components/Profile/ProfilePage';
 import HSESymbols from './Components/Home/HSESymbols';
 import SafetyRules from './Components/Home/SafetyRules';
+import SubmitPage from './Components/Report/SubmitPage';
 
 const homeStack = StackNavigator({
     home: { screen: HomePage },
@@ -33,10 +34,16 @@ const homeStack = StackNavigator({
   }
 );
 
+const reportStack = StackNavigator({
+  report : { screen: ReportPage },
+  submit: { screen: SubmitPage }
+
+})
+
 const tabStack = createBottomTabNavigator({
     homeStack: homeStack,
     activity: ActivityPage,
-    report: ReportPage,
+    report: reportStack,
     map: MapPage ,
     profile: ProfilePage,
   }, {
@@ -63,6 +70,7 @@ const tabStack = createBottomTabNavigator({
       inactiveTintColor: 'gray',
     },
   });
+  
 
 
 const IntroStack = StackNavigator({ 

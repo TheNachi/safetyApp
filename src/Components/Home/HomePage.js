@@ -8,7 +8,7 @@ class HomePage extends Component {
 
   render() {
     return (
-        <View>
+        <View style={{flex: 1 }}>
           <Header />
           <SafetyFirst />
             <View style={{ height: '100%', flexDirection: 'column', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, }}>
