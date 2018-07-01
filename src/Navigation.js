@@ -20,17 +20,6 @@ const homeStack = StackNavigator({
   }, 
   {
     headerMode: 'none',
-//     navigationOptions: {
-//       headerStyle: { backgroundColor: '#EF8E1F' },
-//       title: 'TRIBES!',
-//       headerTintColor: 'white',
-//       gesturesEnabled: false,
-//       headerBackTitle: null,
-//       headerTitleStyle: {
-//         fontSize: 22,
-//         fontWeight: 'bold'
-//       }
-//     }
   }
 );
 
@@ -38,6 +27,8 @@ const reportStack = StackNavigator({
   report : { screen: ReportPage },
   submit: { screen: SubmitPage }
 
+}, {
+  headerMode: 'none',
 })
 
 const tabStack = createBottomTabNavigator({
