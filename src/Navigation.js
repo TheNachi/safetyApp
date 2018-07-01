@@ -1,6 +1,6 @@
 import React from 'react';
 import { StackNavigator, createBottomTabNavigator } from 'react-navigation';
-import Ionicons from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/FontAwesome'
 import Splash from './Splash';
 import Login from './Components/Login/Login';
 import HomePage from './Components/Home/HomePage';
@@ -41,33 +41,33 @@ const reportStack = StackNavigator({
 })
 
 const tabStack = createBottomTabNavigator({
-    homeStack: homeStack,
-    activity: ActivityPage,
-    report: reportStack,
-    map: MapPage ,
-    profile: ProfilePage,
+    HOME: homeStack,
+    ACTIVITY: ActivityPage,
+    REPORT: reportStack,
+    MAP: MapPage ,
+    PROFILE: ProfilePage,
   }, {
     navigationOptions: ({ navigation }) => ({
-      tabBarIcon: ({ focused, tintColor}) => {
+      tabBarIcon: ({ tintColor }) => {
         const { routeName } = navigation.state;
         let iconName;
-        if (routeName === 'home') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        } else if (routeName === 'activity') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        } else if (routeName === 'report') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        } else if (routeName === 'map') {
-          iconName = `ios-information-circle${focused ? '' : '-outline'}`;
-        } else if (routeName === 'profile') {
-            iconName = `ios-information-circle${focused ? '' : '-outline'}`;
+        if (routeName === 'HOME') {
+          iconName = 'home';
+        } else if (routeName === 'ACTIVITY') {
+          iconName = 'warning';
+        } else if (routeName === 'REPORT') {
+          iconName = 'exclamation-circle';
+        } else if (routeName === 'MAP') {
+          iconName = 'map';
+        } else if (routeName === 'PROFILE') {
+            iconName = 'user';
         }
-        return <Ionicons name={iconName} size={25} color={tintColor} />;
+        return <Icon name={iconName} size={25} color={tintColor} />;
       },
     }),
     tabBarOptions: {
-      activeTintColor: '#EF8E1F',
-      inactiveTintColor: 'gray',
+      activeTintColor: 'red',
+      inactiveTintColor: 'black',
     },
   });
   

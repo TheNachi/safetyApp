@@ -22,7 +22,7 @@ const styles = {
         marginLeft: 5,
         marginRight: 5,
         marginTop: 30,
-        width: '35%'
+        width: '50%'
         
     },
     testStyle: {
