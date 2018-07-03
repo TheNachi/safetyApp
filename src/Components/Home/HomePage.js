@@ -11,8 +11,21 @@ class HomePage extends Component {
   render() {
     return (
         <View style={{ flex: 1, display: 'flex' }}>
-          <Header />
+          <Header onPress={() => this.props.navigation.navigate('login')} />
           <SafetyFirst />
+            <View style={{ backgroundColor: 'red', alignItems: 'center', flexDirection: 'row', justifyContent: 'center', padding: 12 }}>
+              <View>
+                <Icon name='file-document' size={40} color='white' />
+              </View>
+              <View>
+                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white' }} >
+                  3 INCIDENTS
+                </Text>
+                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white' }} >
+                  2 EMERGENCIES
+                </Text>
+              </View>
+            </View>
           <View style={{ justifyContent: 'center', alignItems: 'center', flexDirection: 'row', flex: 1, display: 'flex', flexWrap: 'wrap', marginTop: 50 }}>
             <TouchableOpacity 
               style={{ backgroundColor: '#000', height: 150, width: 150, margin: 10, borderRadius: 5, justifyContent: 'center', alignItems: 'center' }}

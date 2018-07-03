@@ -1,26 +1,27 @@
-import React from 'react';
-import { Image, View } from 'react-native';
+import React, { Component } from 'react';
+import { Image, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const Header = () => {
-    return (
-        <View style={styles.viewStyle}>
-            <View style={styles.backViewStyle}>
-                <Icon name='md-arrow-round-back' size={30} style={styles.iconStyle} />
+const Header = ({ onPress }) => {
+
+        return (
+            <View style={styles.viewStyle}>
+                <TouchableOpacity style={styles.backViewStyle} onPress={onPress} >
+                    <Icon name='md-arrow-round-back' size={30} style={styles.iconStyle} />
+                </TouchableOpacity>
+                <View style={styles.thumbnailViewStyle}>
+                    <Image 
+                        style={styles.thumbnailStyle}
+                        source={require('../../Assets/logo.png')} 
+                    />
+                </View>
+                <View style={styles.iconViewStyle}>
+                    <Icon name='md-notifications' size={25} style={styles.iconStyle} /> 
+                    <Icon name='md-search' size={25} style={styles.iconStyle} /> 
+                
+                </View>
             </View>
-            <View style={styles.thumbnailViewStyle}>
-                <Image 
-                    style={styles.thumbnailStyle}
-                    source={require('../../Assets/logo.png')} 
-                />
-            </View>
-            <View style={styles.iconViewStyle}>
-                <Icon name='md-notifications' size={25} style={styles.iconStyle} /> 
-                <Icon name='md-search' size={25} style={styles.iconStyle} /> 
-             
-            </View>
-        </View>
-    );
+        )
 }
 
 const styles = {

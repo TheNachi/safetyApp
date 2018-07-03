@@ -10,7 +10,7 @@ class SafetyRules extends Component {
   render() {
     return (
       <View>
-        <Header />
+        <Header onPress={() => this.props.navigation.navigate('home')} />
         <SafetyFirst />
         <ScrollView>
           <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center'}}>
