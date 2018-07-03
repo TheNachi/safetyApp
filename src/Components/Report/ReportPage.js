@@ -32,13 +32,13 @@ class ReportPage extends Component {
             <SafetyFirst style={{ flex: 1}}/>
             <ScrollView>
               <View style={{ padding: 5, flex: 1 }}>
-                <Text style={{ fontSize: 20, fontWeight: '700', marginTop: 10 }}> SCAN THE QR CODE</Text>
+                <Text style={{ fontSize: 20, fontWeight: '700', marginTop: 10,  marginLeft: 5, marginBottom: 10 }}> SCAN THE QR CODE</Text>
                 <QRCodeScanner
                   onRead={this.onSuccess.bind(this)}
                 />
               </View>
               <Form>
-              <Text style={{ fontSize: 20, fontWeight: '700', marginTop: 10 }}> OR Select desired location below</Text>
+              <Text style={{ fontSize: 20, fontWeight: '700', marginTop: 10, marginLeft: 5 }}> OR Select desired location below</Text>
                 <Picker
                   mode="dropdown"
                   iosIcon={<Icon name="ios-arrow-down-outline" />}
