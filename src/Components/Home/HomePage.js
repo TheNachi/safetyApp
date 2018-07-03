@@ -15,13 +15,13 @@ class HomePage extends Component {
           <SafetyFirst />
             <View style={{ backgroundColor: 'red', alignItems: 'center', flexDirection: 'row', justifyContent: 'center', padding: 12 }}>
               <View>
-                <Icon name='file-document' size={40} color='white' />
+                <Icon name='alert' type='feather' size={40} color='white' />
               </View>
               <View>
-                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white' }} >
+                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white', paddingLeft: 5 }} >
                   3 INCIDENTS
                 </Text>
-                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white' }} >
+                <Text style={{ fontSize: 20, fontWeight: '700', color: 'white', paddingLeft: 5 }} >
                   2 EMERGENCIES
                 </Text>
               </View>
