@@ -4,9 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "start:dev": "nodemon server.js"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "morgan": "^1.9.0",
     "native-base": "^2.6.1",
     "react": "16.0.0",
     "react-native": "0.51.0",
@@ -21,9 +25,23 @@
     "babel-jest": "23.0.1",
     "babel-preset-react-native": "4.0.0",
     "jest": "23.1.0",
+    "nodemon": "^1.18.3",
     "react-test-renderer": "16.3.1"
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "description": "SAFETY APP DOCUMENTATION",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marquis-d-ugo/safetyApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marquis-d-ugo/safetyApp/issues"
+  },
+  "homepage": "https://github.com/marquis-d-ugo/safetyApp#readme"
 }
