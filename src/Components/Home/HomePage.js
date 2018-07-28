@@ -63,7 +63,7 @@ class HomePage extends Component {
   }
 }
 
-styles = {
+const styles = {
   buttonViewStyle: {
     flexDirection: 'row',
     width: 400,
@@ -84,27 +84,3 @@ styles = {
 
 
 export default HomePage;
-
-// <View style={{ height: '100%', flexDirection: 'column', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, }}>
-//               <View style={{ flexDirection: 'row', borderStyle: 'solid', borderColor: 'black', borderWidth: 2, flex: 1, alignItems: 'center', justifyContent: 'center'  }}>
-//                 <TouchableOpacity
-//                   style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: 2, margin: 7, marginTop: -90 }}
-//                   onPress={() => this.props.navigation.navigate('hseSymbols')}
-//                 >
-//                   <Image 
-//                     style={{ height: 130, width: 130, }}
-//                     source={require('../../Assets/boss.png')} 
-//                   />
-//                 </TouchableOpacity>
-//                 <TouchableOpacity
-//                   style={{ borderStyle: 'solid', borderColor: 'black', borderWidth: 2, margin: 7, marginTop: -90 }}
-//                   onPress={() => this.props.navigation.navigate('safetyRules')}
-//                 >
-//                   <Image 
-//                     style={{ height: 130, width: 130, }}
-//                     source={require('../../Assets/paper.png')} 
-//                   />
-//                 </TouchableOpacity>
-//                 <Divider style={{ backgroundColor: 'blue' }} />
-//               </View>
-//             </View>

@@ -1,3 +1,15 @@
 {
-  "presets": ["react-native"]
+  "presets": [
+    "react-native",
+    ["env",
+      {
+        "targets": {
+          "node": "8"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "transform-object-rest-spread"
+  ]
 }
