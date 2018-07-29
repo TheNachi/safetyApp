@@ -5,13 +5,16 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "start:dev": "nodemon server.js"
+    "start:dev": "nodemon server.js --exec babel-node"
   },
   "dependencies": {
+    "bcrypt": "^3.0.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
     "native-base": "^2.6.1",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-native-camera": "^1.1.4",
@@ -19,9 +22,11 @@
     "react-native-photo-upload": "^1.2.0",
     "react-native-qrcode-scanner": "^1.0.1",
     "react-native-vector-icons": "^4.6.0",
-    "react-navigation": "^2.5.2"
+    "react-navigation": "^2.5.2",
+    "sequelize": "^4.38.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-jest": "23.0.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
