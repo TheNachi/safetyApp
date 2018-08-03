@@ -17,7 +17,7 @@ module.exports = {
         type: Sequelize.ARRAY(Sequelize.STRING),
         allowNull: false
       },
-      descritpion: {
+      description: {
         type: Sequelize.TEXT,
         allowNull: false
       },

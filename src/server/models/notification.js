@@ -1,16 +1,16 @@
 export default (sequelize, DataTypes) => {
   const Notification = sequelize.define('Notification', {
     status: {
-      types: DataTypes.ENUM,
+      type: DataTypes.ENUM,
       values: ['read', 'unread'],
       allowNull: false
     },
     content: {
-      types: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     userId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Users',
@@ -18,7 +18,7 @@ export default (sequelize, DataTypes) => {
       }
     },
     roleId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Roles',

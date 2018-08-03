@@ -23,7 +23,7 @@ export default (sequelize, DataTypes) => {
       }
     },
     email: {
-      types: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: {
         args: true,
@@ -42,7 +42,7 @@ export default (sequelize, DataTypes) => {
       }
     },
     password: {
-      types: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: {

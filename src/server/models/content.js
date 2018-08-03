@@ -20,19 +20,19 @@ export default (sequelize, DataTypes) => {
       },
     },
     image: {
-      types: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: true
     },
     content: {
-      types: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     description: {
-      types: DataTypes.TEXT,
+      type: DataTypes.TEXT,
       allowNull: false
     },
     roleId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Roles',
@@ -40,7 +40,7 @@ export default (sequelize, DataTypes) => {
       }
     }, 
     userId: {
-      types: DataTypes.INTEGER,
+      type: DataTypes.INTEGER,
       allowNull: true,
       references: {
         model: 'Users',

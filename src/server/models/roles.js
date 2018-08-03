@@ -13,7 +13,7 @@ export default (sequelize, DataTypes) => {
       allowNull: false
     },
     description: {
-      type: DataTypes.Text,
+      type: DataTypes.TEXT,
       allowNull: false,
       unique: false
     }

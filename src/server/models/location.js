@@ -9,7 +9,7 @@ export default (sequelize, DataTypes) => {
       }
     },
     qrCode: {
-      types: DataTypes.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
       unique: {
         args: true,
