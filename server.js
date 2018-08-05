@@ -3,6 +3,7 @@ import logger from 'morgan';
 import bodyParser from 'body-parser';
 import http from 'http';
 import role from './src/server/routes/role'
+import user from './src/server/routes/user'
 
 // Set up the express app
 const server = express();
@@ -16,6 +17,7 @@ server.use(bodyParser.urlencoded({ extended: false }));
 
 
 server.use('/api', role)
+server.use('/api', user)
 
 server.get('*', (req, res) => res.status(200).send({
   message: 'Welcome to the beginning of nothingness.',

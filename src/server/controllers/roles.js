@@ -13,8 +13,13 @@ export default {
     },
 
     list(req, res) {
-        db.Roles.findAll().then((role) => {
-            res.send(role)
+        db.Roles.findAll()
+            .then((role) => {
+                if(!role) {
+                    return res.status(404)
+                        .send({ message: 'No role found' })
+                }
+                res.send(role)
         });
     },
 
