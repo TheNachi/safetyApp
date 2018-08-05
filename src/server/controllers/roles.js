@@ -11,4 +11,10 @@ export default {
                 res.status(400).send(err.errors);
             });
     },
+
+    list(req, res) {
+        db.Roles.findAll().then((role) => {
+            res.send(role)
+        });
+    },
 }
