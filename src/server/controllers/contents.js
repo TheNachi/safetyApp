@@ -19,5 +19,9 @@ export default {
             .then((content) => {
                 res.send(content)
             })
+    },
+
+    retrieve(req, res) {
+        db.Content.findById
     }
 }
