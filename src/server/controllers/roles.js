@@ -17,4 +17,39 @@ export default {
             res.send(role)
         });
     },
+
+    retrieve(req, res) {
+        db.Roles.findById(req.params.id)
+            .then((role) => {
+                if(!role) {
+                    return res.status(404)
+                        .send({ message: `Role with id: ${req.params.id} not found` });
+                }
+                res.send(role);
+            })
+    },
+    update(req, res) {
+        db.Roles.findById(req.params.id)
+            .then((role) => {
+                if(!role) {
+                    return res.status(404)
+                        .send({ message: `Role with id: ${req.params.id} not found` });
+                }
+                role.update(req.body)
+                    .then((updatedRole) => {
+                        res.send(updatedRole);
+                    })
+            })
+    },
+    destroy(req, res) {
+        db.Roles.findById(req.params.id)
+            .then((role) => {
+                if(!role) {
+                    return res.status(404)
+                    .send({ message: `Role with id: ${req.params.id} not found` });
+                }
+                role.destroy()
+                    .then(() => res.send({ message: `Role deleted successfully` }))
+            })
+    }
 }
