@@ -58,11 +58,11 @@ export default {
     },
 
     login(req, res) {
-        const { identifier, password } = req.body;
+        const { email, password } = req.body;
 
         db.Users.findOne({
             where: {
-                $or: [{ email: identifier }]
+                email,
             }
         })
         .then((user => {
