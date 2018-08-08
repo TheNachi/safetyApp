@@ -20,7 +20,7 @@ server.use('/api', role)
 server.use('/api', user)
 
 server.get('*', (req, res) => res.status(200).send({
-  message: 'Welcome to the beginning of nothingness.',
+  message: 'Welcome to Safety Prime.',
 }));
 
 const port = parseInt(process.env.PORT, 10) || 8000;
