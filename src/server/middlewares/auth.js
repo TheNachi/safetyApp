@@ -17,6 +17,21 @@ export default {
         })
     },
 
+    permitSelfOrAdmin(req, res, next) {
+        db.Users.findById(req.params.id)
+            .then((user) => {
+                console.log(req.decoded)
+                if (user.id === req.decoded.id || req.decoded.roleId === 2) {
+                    next()
+                } else {
+                    return res.status(401).send({ message: 'You don\'t have the rights to perform this operation' })
+                }
+            })
+            .catch((err) => {
+                res.status(400).send({ message: 'You must have inputed a wrong userId, please confirm'})
+            })
+    },
+
     permitAdmin(req, res, next) {
         db.Roles.findById(req.decoded.roleId)
             .then((role) => {
@@ -28,6 +43,26 @@ export default {
             })
     },
     
+    validateLoginInput(req, res, next) {
+        if (!req.body.password || !req.body.email ) {
+            return res.status(400)
+                .send({
+                    message: 'Please provide your email and password to login'
+                });
+        }
+
+        const email = /\w+/g.test(req.body.email);
+        const password = /\w+/g.test(req.body.password);
+
+        if (!email || !password) {
+            return res.status(400)
+                .send({
+                    message: 'Please enter a valid email and password'
+                })
+        }
+        next();
+    },
+
     validateUserInput(req, res, next) {
         let firstname = /\w+/g.test(req.body.firstname);
         let lastname = /\w+/g.test(req.body.lastname);

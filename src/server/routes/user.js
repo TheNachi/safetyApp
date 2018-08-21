@@ -9,15 +9,15 @@ user.route('/users')
     .get(auth.verifyToken, auth.permitAdmin, Users.list);
 
 user.route('/users/:id')
-    .get(Users.retrieve)
-    .put(Users.update)
-    .delete(Users.destroy);
+    .get(auth.verifyToken, auth.permitSelfOrAdmin, Users.retrieve)
+    .put(auth.verifyToken, Users.update)
+    .delete(auth.verifyToken, auth.permitAdmin, Users.destroy);
 
 user.route('/users/login')
-    .post(Users.login);
+    .post(auth.validateLoginInput, Users.login);
 
 user.route('/users/search')
-    .get(Users.search);
+    .get(auth.verifyToken, auth.permitAdmin, Users.search);
 
 user.route('/users/logout')
     .post(Users.logout)

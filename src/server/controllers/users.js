@@ -70,8 +70,10 @@ export default {
         })
         .then((user => {
             if (user && bcrypt.compareSync(password, user.password)) {
+                const token = userHelper.getToken(user)
+                user = userHelper.permittedAttributes(user)
                 res.status(201)
-                    .send(user)
+                    .send({ token, expiresIn: 172800, user })
             } else {
                 res.status(401)
                     .json({
@@ -79,10 +81,13 @@ export default {
                     })
             }
         }))
+        .catch((err) => {
+            res.status(400).send(err.errors)
+        })
     },
 
-    logout() {
-
+    logout(req, res) {
+        
     },
 
     search(req, res) {
