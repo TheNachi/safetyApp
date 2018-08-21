@@ -5,7 +5,7 @@ import auth from '../middlewares/auth'
 const user = express.Router();
 
 user.route('/users')
-    .post(Users.create)
+    .post(auth.validateUserInput, Users.create)
     .get(Users.list);
 
 user.route('/users/:id')

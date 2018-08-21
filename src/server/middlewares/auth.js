@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken';
+import db from '../models/';
 
 export default {
     
@@ -53,6 +54,35 @@ export default {
                 message: 'Minimum of 8 characters is allowed for password'
                 });
         }
+
+        db.Users.findOne({ where: { email: req.body.email } })
+            .then((user) => {
+                if (user) {
+                    return res.status(409)
+                        .send({
+                            message: 'email already exists'
+                        })
+                }
+                db.Users.findOne({ where: { staffId: req.body.staffId } })
+                    .then((newUser) => {
+                        if (newUser) {
+                            return res.status(409)
+                                .send({
+                                    message: 'staffId already exists'
+                                })
+                        }
+                        firstName = req.body.firstName;
+                        lastName = req.body.lastName;
+                        email = req.body.email;
+                        password = req.body.password;
+                        department = req.body.department;
+                        staffId = req.body.staffId;
+                        const roleId = req.body.roleId || 1;
+                        req.userInput = {firstName, lastName, email, password, department, staffId, roleId };
+                        next()
+                    })
+            })
+
     
     }
 }
