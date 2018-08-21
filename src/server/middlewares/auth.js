@@ -4,20 +4,20 @@ import db from '../models/';
 export default {
     
     validateUserInput(req, res, next) {
-        let firstName = /\w+/g.test(req.body.firstName);
-        let lastName = /\w+/g.test(req.body.lastName);
+        let firstname = /\w+/g.test(req.body.firstname);
+        let lastname = /\w+/g.test(req.body.lastname);
         let email = /\S+@\S+\.\S+/.test(req.body.email);
         let password = /\w+/g.test(req.body.password);
         let department = /\w+/g.test(req.body.department);
         let staffId = /\w+/g.test(req.body.staffId);
 
-        if (!firstName) {
+        if (!firstname) {
             return res.status(400)
                 .send({
                 message: 'Enter a valid firstName'
                 });
         }
-        if (!lastName) {
+        if (!lastname) {
             return res.status(400)
                 .send({
                 message: 'Enter a valid lastName'
@@ -71,14 +71,14 @@ export default {
                                     message: 'staffId already exists'
                                 })
                         }
-                        firstName = req.body.firstName;
-                        lastName = req.body.lastName;
+                        firstname = req.body.firstname;
+                        lastname = req.body.lastname;
                         email = req.body.email;
                         password = req.body.password;
                         department = req.body.department;
                         staffId = req.body.staffId;
                         const roleId = req.body.roleId || 1;
-                        req.userInput = {firstName, lastName, email, password, department, staffId, roleId };
+                        req.userInput = {firstname, lastname, email, password, department, staffId, roleId };
                         next()
                     })
             })

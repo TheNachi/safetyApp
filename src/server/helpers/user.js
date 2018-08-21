@@ -7,8 +7,8 @@ const userHelper = {
     permittedAttributes(user) {
         const attributes = {
           id: user.id,
-          firstName: user.firstName,
-          lastName: user.lastName,
+          firstname: user.firstname,
+          lastname: user.lastname,
           email: user.email,
           roleId: user.roleId,
           department: user.department,
@@ -21,8 +21,8 @@ const userHelper = {
       getUserAttribute() {
         return [
           'id',
-          'firstName',
-          'lastName',
+          'firstname',
+          'lastname',
           'email',
           'roleId',
           'department',
