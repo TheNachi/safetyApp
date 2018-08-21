@@ -1,12 +1,15 @@
 import bcrypt from 'bcrypt';
 import db from '../models/';
+import userHelper from '../helpers/user'
 
 export default {
 
     create(req, res) {
         db.Users.create(req.body)
             .then((user) => {
-                res.status(201).send(user)
+                const token = userHelper.getToken(user)
+                user = userHelper.permittedAttributes(user)
+                res.status(201).send({ token, expiresIn: 172800, user })
             })
             .catch((err) => {
                 res.status(400).send(err.errors)
