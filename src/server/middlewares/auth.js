@@ -2,6 +2,31 @@ import jwt from 'jsonwebtoken';
 import db from '../models/';
 
 export default {
+
+    verifyToken(req, res, next) {
+        const token = req.headers.authorization || req.headers['x-access-token'];
+        if (!token) {
+            return res.status(401).send({ message: 'Unauthorized Access' })
+        }
+        jwt.verify(token, process.env.MY_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(401).send({ message: 'Invalid Token'})
+            }
+            req.decoded = decoded;
+            next();
+        })
+    },
+
+    permitAdmin(req, res, next) {
+        db.Roles.findById(req.decoded.roleId)
+            .then((role) => {
+                if (role.roleName === 'admin') {
+                    next();
+                } else {
+                    return res.status(403).send({ message: 'Your are not an admin' })
+                }
+            })
+    },
     
     validateUserInput(req, res, next) {
         let firstname = /\w+/g.test(req.body.firstname);

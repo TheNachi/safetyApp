@@ -6,7 +6,7 @@ const user = express.Router();
 
 user.route('/users')
     .post(auth.validateUserInput, Users.create)
-    .get(Users.list);
+    .get(auth.verifyToken, auth.permitAdmin, Users.list);
 
 user.route('/users/:id')
     .get(Users.retrieve)
