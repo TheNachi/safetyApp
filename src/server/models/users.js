@@ -46,8 +46,8 @@ export default (sequelize, DataTypes) => {
       allowNull: false,
       validate: {
         len: {
-          args: [6],
-          msg: 'The password you entered is less than 6 characters'
+          args: [8],
+          msg: 'The password you entered is less than 8 characters'
         },
       }
     },
