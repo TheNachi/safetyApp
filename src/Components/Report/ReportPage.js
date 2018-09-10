@@ -11,7 +11,8 @@ class ReportPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selected2: undefined
+      selected2: undefined,
+      location: ""
     };
   }
   onValueChange2(value: string) {
@@ -21,7 +22,10 @@ class ReportPage extends Component {
   }
 
   onSuccess(e) {
-    this.props.navigation.navigate('submit')
+    this.props.navigation.navigate('submit', {
+      location: e.data
+    })
+    console.log(e.data, "here")
   }
 
 

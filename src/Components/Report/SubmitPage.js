@@ -11,6 +11,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 class SubmitPage extends Component {
 
     render() {
+        const { navigation } = this.props;
+        const location = navigation.getParam('location', 'No location selected')
         return (
             <View style={{flex: 1 }}>
                 <Header onPress={() => this.props.navigation.navigate('report')} />
@@ -27,7 +29,7 @@ class SubmitPage extends Component {
                             ________________________________________________
                         </Text>
                         <Text style={{ fontSize: 19, paddingTop: 10 }}>
-                            Packaging Hall - Line 6
+                            {location}
                         </Text>
                     </View>
                     <View style={{ flexDirection: 'row' }}>

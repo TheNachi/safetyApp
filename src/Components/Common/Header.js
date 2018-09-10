@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Image, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { withNavigation } from 'react-navigation';
 
-const Header = ({ onPress }) => {
+const Header = ({ onPress, navigation }) => {
 
         return (
             <View style={styles.viewStyle}>
@@ -16,8 +17,13 @@ const Header = ({ onPress }) => {
                     />
                 </View>
                 <View style={styles.iconViewStyle}>
-                    <Icon name='md-notifications' size={25} style={styles.iconStyle} /> 
-                    <Icon name='md-search' size={25} style={styles.iconStyle} /> 
+                    <TouchableOpacity>
+                        <Icon name='md-notifications' size={25} style={styles.iconStyle} /> 
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate('search')}>
+                        <Icon name='md-search' size={25} style={styles.iconStyle} /> 
+                    </TouchableOpacity>
+                    
                 
                 </View>
             </View>
@@ -68,4 +74,4 @@ const styles = {
     }
 };
  
-export default Header;
+export default withNavigation(Header);

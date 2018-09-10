@@ -1,5 +1,5 @@
 import React from 'react';
-import { StackNavigator, createBottomTabNavigator } from 'react-navigation';
+import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import Splash from './Splash';
 import Login from './Components/Login/Login';
@@ -11,8 +11,9 @@ import ProfilePage from './Components/Profile/ProfilePage';
 import HSESymbols from './Components/Home/HSESymbols';
 import SafetyRules from './Components/Home/SafetyRules';
 import SubmitPage from './Components/Report/SubmitPage';
+import Search from './Components/Search/search';
 
-const homeStack = StackNavigator({
+const homeStack = createStackNavigator({
     home: { screen: HomePage },
     hseSymbols: { screen: HSESymbols },
     safetyRules: { screen: SafetyRules },
@@ -23,7 +24,7 @@ const homeStack = StackNavigator({
   }
 );
 
-const reportStack = StackNavigator({
+const reportStack = createStackNavigator({
   report : { screen: ReportPage },
   submit: { screen: SubmitPage }
 
@@ -62,17 +63,20 @@ const tabStack = createBottomTabNavigator({
     },
   });
   
+const searchStack = createStackNavigator({
+  search: {screen: Search }
+})
 
-
-const IntroStack = StackNavigator({ 
+const IntroStack = createStackNavigator({ 
     splash:     { screen: Splash },
     login:      { screen: Login },
      }, 
     { headerMode: 'none' })
 
-const Navigation = StackNavigator({ 
+const Navigation = createStackNavigator({ 
     IntroStack: { screen: IntroStack },
-    tabStack:   { screen: tabStack }
+    tabStack:   { screen: tabStack },
+    searchStack: {screen: searchStack}
 },
     { headerMode: 'none' })
 
