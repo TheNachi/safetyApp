@@ -25,7 +25,6 @@ class ReportPage extends Component {
     this.props.navigation.navigate('submit', {
       location: e.data
     })
-    console.log(e.data, "here")
   }
 
 
@@ -39,6 +38,7 @@ class ReportPage extends Component {
                 <Text style={{ fontSize: 20, fontWeight: '700', marginTop: 10,  marginLeft: 5, marginBottom: 10 }}> SCAN THE QR CODE</Text>
                 <QRCodeScanner
                   onRead={this.onSuccess.bind(this)}
+                  reactivate={true}
                 />
               </View>
               <Form>
@@ -61,7 +61,7 @@ class ReportPage extends Component {
                 </Picker>
               </Form>
               <Button style={{ flex: 1}} onPress={() => this.props.navigation.navigate('submit')}>
-                      GO TO SUBMIT
+                      NEXT
               </Button>
             </ScrollView>
         </View>
