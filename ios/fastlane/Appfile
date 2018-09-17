@@ -1,0 +1,8 @@
+app_identifier("org.reactjs.native.example.safetyApp") # The bundle identifier of your app
+apple_id("munachimso@ragnarrelay.com") # Your Apple email address
+
+itc_team_id("117155629") # App Store Connect Team ID
+team_id("4H7YYU92G2") # Developer Portal Team ID
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
